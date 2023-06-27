@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    <bean id="cal" class="org.ncu.Calculator.Calculator" >
+	<constructor-arg ref="add" ></constructor-arg>
+	<constructor-arg ref="sub"></constructor-arg>
+	<property name="division" ref="div" ></property>
+	<property name="Multiply" ref="mul"></property>	
+    </bean>
+    
+	<bean id="add" class="org.ncu.Calculator.AdditionService"></bean>
+	<bean id="sub" class="org.ncu.Calculator.SubtractionService"></bean>
+	<bean id="mul" class="org.ncu.Calculator.MultiplicationService"></bean>
+	<bean id="div" class="org.ncu.Calculator.DivisionService"></bean> 
+	
+	<!-- <context:component-scan base-package="org.ncu.Calculator"></context:component-scan> -->
+	
+</beans>
+
+
